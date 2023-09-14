@@ -1,0 +1,25 @@
+#include<lpc214x.h>
+char *msg = "Hello World\r\n";
+int main()
+{
+	PINSEL0=0x5;
+	U0LCR=0X83;
+	U0DLM=0X00;
+	 U0DLL=0X61;
+	 U0LCR=0x03
+	 while(*msg!=0){
+		while((U0LSR & 0X40)==0);
+			U0THR = *msg;
+			msg++;
+	}
+}
+
+#inlude<lpc214x.h>
+int main(){
+	int i;
+	IOSET0= 0X00000900;
+	for(i=0;i<9999;i++)
+	IOCLR0= 0X00000900;
+	for(i=0;i<9999;i++)
+	}
+}
